@@ -12,8 +12,8 @@ public class adddeleteuser extends AppCompatActivity {
     student s;
     EditText ed1, ed2, ed3,ed4;
     Button b1;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+
+    protected void oncreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adddeleteuser);
 
@@ -23,6 +23,11 @@ public class adddeleteuser extends AppCompatActivity {
         ed3= findViewById(R.id.et_roll_no);
         ed4= findViewById(R.id.et_class);
         b1 = findViewById(R.id.btn_save);
+
+        s.setID(Integer.parseInt(ed1.getText().toString()));
+        s.setName(ed1.getText().toString());
+        s.setage(Integer.parseInt(ed1.getText().toString()));
+        s.setClass1(Integer.parseInt(ed1.getText().toString()));
 
         db = new dbhandler(getApplicationContext());
         db.insertStudent(s);

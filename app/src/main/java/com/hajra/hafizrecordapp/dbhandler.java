@@ -34,7 +34,7 @@ public class dbhandler extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String sql = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "("
-                + COLUMN_ID + " INTEGER,"
+                + COLUMN_ID + " INTEGER PRIMARY KEY,"
                 + COLUMN_NAME + " TEXT,"
                 + COLUMN_AGE + " INTEGER,"
                 + COLUMN_CLASS + " INTEGER"
@@ -122,9 +122,50 @@ public class dbhandler extends SQLiteOpenHelper {
             } while (cursor.moveToNext());
         }
 
+
+
         cursor.close();
         db.close();
 
         return students;
+    }
+
+    public student selectStudent(int id) {
+
+        student s;
+        String sql = "SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_ID + " = " + String.valueOf(id);
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(sql, null);
+
+        /*
+        * if (cursorCourses.moveToFirst()) {
+            do {
+                studentArrayList.add(new StudentModel(cursorCourses.getString(1),
+                      cursorCourses.getInt(2),
+                        cursorCourses.getInt(3) == 1 ? true : false));
+            } while (cursorCourses.moveToNext());
+        }
+        * */
+
+
+            cursor.moveToFirst();
+            @SuppressLint("Range") String name = cursor.getString(cursor.getColumnIndex(COLUMN_NAME));
+            @SuppressLint("Range") int age = Integer.parseInt(cursor.getString(cursor.getColumnIndex(COLUMN_AGE)));
+            @SuppressLint("Range") int class1 = Integer.parseInt(cursor.getString(cursor.getColumnIndex(COLUMN_CLASS)));
+            @SuppressLint("Range") int sabaq = Integer.parseInt(cursor.getString(cursor.getColumnIndex(COLUMN_SABAQ)));
+            @SuppressLint("Range") int sabaqi = Integer.parseInt(cursor.getString(cursor.getColumnIndex(COLUMN_SABAQI)));
+            @SuppressLint("Range") int manzil = Integer.parseInt(cursor.getString(cursor.getColumnIndex(COLUMN_FINAL)));
+            @SuppressLint("Range") boolean yes = cursor.getInt(cursor.getColumnIndex(COLUMN_YESNO)) > 0;
+
+            cursor.close();
+            db.close();
+
+            s = new student(id, name, age, class1, sabaq, sabaqi, manzil, yes);
+
+            return s;
+
+
+
     }
 }

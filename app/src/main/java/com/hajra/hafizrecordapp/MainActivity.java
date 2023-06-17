@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        recyclerView = findViewById(R.id.recylerViewStudent);
+        recyclerView = findViewById(R.id.recycleview);
         recyclerView.setHasFixedSize(true);
 
         //LinearLayoutManager GridLayoutManager

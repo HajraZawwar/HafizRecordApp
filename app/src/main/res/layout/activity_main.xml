@@ -51,7 +51,7 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recylerViewStudent"
+        android:id="@+id/recycleview"
         android:layout_width="409dp"
         android:layout_height="729dp"
         android:layout_marginStart="24dp"
