@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -17,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView.Adapter adapter;
     RecyclerView.LayoutManager layoutManager;
 
+    dbhandler db;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +27,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         recyclerView = findViewById(R.id.recylerViewStudent);
-
-
         recyclerView.setHasFixedSize(true);
 
         //LinearLayoutManager GridLayoutManager
@@ -35,9 +36,17 @@ public class MainActivity extends AppCompatActivity {
 //                false);
         recyclerView.setLayoutManager(layoutManager);
 
-        adapter = new myRecyclerViewAdapter(studentList) ;
+        db= new dbhandler(this);
+        adapter = new myRecyclerViewAdapter(db.selectAllStudents());
+
+
         recyclerView.setAdapter(adapter);
+
         //adapter.notifyDataSetChanged();
+
+
+
+
 
 
     }

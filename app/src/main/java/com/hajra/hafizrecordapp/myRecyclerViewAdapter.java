@@ -3,7 +3,6 @@ package com.hajra.hafizrecordapp;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,7 +13,7 @@ import java.util.List;
 class myRecyclerViewAdapter extends RecyclerView.Adapter<myRecyclerViewAdapter.MyVH> {
 
     List<student> studentList;
-    public void myrecyclerview(List<student> studentList)
+    public myRecyclerViewAdapter(List<student> studentList)
     {
         this.studentList = studentList;
     }
@@ -31,9 +30,10 @@ class myRecyclerViewAdapter extends RecyclerView.Adapter<myRecyclerViewAdapter.M
     @Override
     public void onBindViewHolder(@NonNull myRecyclerViewAdapter.MyVH holder, int position) {
         holder.data=studentList.get(position);
+        holder.textViewFriendID.setText(holder.data.getID());
         holder.textViewFriendName.setText(holder.data.getName());
-        holder.textViewdateFriend.setText(String.valueOf(holder.data.getDob()));
-        holder.textViewCity.setText(holder.data.getCity());
+        holder.textViewdateFriend.setText(String.valueOf(holder.data.getage()));
+        holder.textViewCity.setText(holder.data.getClass1());
     }
 
     @Override
@@ -43,13 +43,17 @@ class myRecyclerViewAdapter extends RecyclerView.Adapter<myRecyclerViewAdapter.M
 
 
     public class MyVH extends RecyclerView.ViewHolder {
-        ImageView imageViewFriend;
+
+        TextView textViewFriendID;
         TextView textViewFriendName;
+
         TextView textViewdateFriend;
         TextView textViewCity;
         student data;
         public MyVH(@NonNull View itemView) {
             super(itemView);
+
+            textViewFriendID= itemView.findViewById(R.id.textViewFriendID);
             textViewFriendName = itemView.findViewById(R.id.textViewFriendName);
             textViewdateFriend = itemView.findViewById(R.id.textViewDate);
             textViewCity = itemView.findViewById(R.id.textViewCity);
