@@ -20,7 +20,7 @@ public class DbHelper extends SQLiteOpenHelper {
     private static final String COLUMN_CLASS = "class";
     private static final String COLUMN_SABAQ = "sabaq";
     private static final String COLUMN_SABAQI = "sabqi";
-    private static final String COLUMN_FINAL = "final";
+    private static final String COLUMN_FINAL = "manzil";
     private static final String COLUMN_YESNO = "yes";
 
     public DbHelper(Context context) {
@@ -33,9 +33,9 @@ public class DbHelper extends SQLiteOpenHelper {
                 + COLUMN_NAME + " TEXT,"
                 + COLUMN_AGE + " INTEGER,"
                 + COLUMN_CLASS + " INTEGER"
-                +COLUMN_SABAQ + "INTEGER "
-                +COLUMN_FINAL + " INTEGER"
-                +COLUMN_YESNO + " BOOLEAN"
+                +COLUMN_SABAQ + "INTEGER"
+                +COLUMN_FINAL + "INTEGER"
+                +COLUMN_YESNO + "BOOLEAN"
                 + ")";
         db.execSQL(sql);
     }
@@ -52,8 +52,8 @@ public class DbHelper extends SQLiteOpenHelper {
 
         ContentValues values = new ContentValues();
         values.put(COLUMN_NAME, student.getName());
-        values.put(COLUMN_ROLLNO, student.getRollNo());
-        values.put(COLUMN_ENROLL, student.isEnroll());
+        values.put(COLUMN_AGE, student.getRollNo());
+        values.put(COLUMN_CLASS, student.isEnroll());
 
         db.insert(TABLE_NAME, null, values);
         db.close();
