@@ -72,6 +72,9 @@ public class student
         return isCompleted();
     }
 
+    public void setcompleted(boolean completed) {
+        iscompleted = completed;
+
 
 
   //  @Override
