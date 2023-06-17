@@ -9,9 +9,12 @@ public class student
     private int sabaq;
     private int sabaqi;
     private int manzil;
+
+    private int ID;
     private boolean iscompleted;
 
-    public student(String name, int age, int class1, int  sabaq, int sabaqi, int manzil, boolean iscompleted) {
+    public student( int ID, String name, int age, int class1, int  sabaq, int sabaqi, int manzil, boolean iscompleted) {
+        this.ID= ID;
         this.name = name;
         this.age = age;
         this.class1 = class1;
@@ -29,6 +32,13 @@ public class student
         this.name = name;
     }
 
+    public void setID(int ID) {
+        this.ID= ID;
+    }
+
+    public int getID() {
+        return ID;
+    }
     public void setage(int age) {
         this.age= age;
     }
@@ -75,7 +85,7 @@ public class student
     public void setcompleted(boolean completed) {
         iscompleted = completed;
 
-
+    }
 
   //  @Override
     //public String toString() {

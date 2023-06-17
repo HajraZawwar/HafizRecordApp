@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?><LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/simpleTextView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Record Of Hafiz"
+        android:textSize="30sp"
+        android:gravity="center_horizontal"
+        />
+
+
+    <EditText
+        android:id="@+id/et_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID"
+        android:inputType="number"
+        android:maxLines="1"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name"
+        android:inputType="text"
+        android:maxLines="1"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/et_roll_no"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Age"
+        android:inputType="number"
+        android:maxLines="1"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/et_class"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Class"
+        android:inputType="number"
+        android:maxLines="1"
+        android:minHeight="48dp"
+        android:layout_marginBottom="30dp"
+        />
+
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Save" />
+
+    <Button
+        android:id="@+id/btn_delete"
+        android:layout_width="300dp"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:text="Delete" />
+
+
+</LinearLayout>
