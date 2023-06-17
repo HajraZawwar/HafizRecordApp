@@ -68,8 +68,8 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="Add Student"
-        tools:layout_editor_absoluteX="173dp"
-        tools:layout_editor_absoluteY="507dp" />
+        tools:layout_editor_absoluteX="250dp"
+        tools:layout_editor_absoluteY="657dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

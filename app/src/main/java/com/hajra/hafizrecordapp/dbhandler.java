@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class DbHelper extends SQLiteOpenHelper {
+public class dbhandler extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "students.db";
     private static final String TABLE_NAME = "students";
@@ -21,13 +21,13 @@ public class DbHelper extends SQLiteOpenHelper {
     private static final String COLUMN_CLASS = "class1";
     private static final String COLUMN_SABAQ = "sabaq";
 
-    private static final String COLUMN_SABAQI = "sabqi";
+    private static final String COLUMN_SABAQI = "sabaqi";
     private static final String COLUMN_FINAL = "manzil";
 
 
     private static final String COLUMN_YESNO = "yes";
 
-    public DbHelper(Context context) {
+    public dbhandler(Context context) {
         super(context, DATABASE_NAME, null, 1);
     }
 
@@ -109,16 +109,16 @@ public class DbHelper extends SQLiteOpenHelper {
 
         if (cursor.moveToFirst()) {
             do {
-                @SuppressLint("Range") int id = cursor.getInt(cursor.getColumnIndex(COLUMN_ID));
-                @SuppressLint("Range") String name = cursor.getString(cursor.getColumnIndex(COLUMN_NAME));
-                @SuppressLint("Range")  String age = cursor.getString(cursor.getColumnIndex(COLUMN_AGE));
-                @SuppressLint("Range")  String class1 = cursor.getString(cursor.getColumnIndex(COLUMN_CLASS));
-                @SuppressLint("Range")  String sabaq = cursor.getString(cursor.getColumnIndex(COLUMN_SABAQ));
-                @SuppressLint("Range")  String sabaqi = cursor.getString(cursor.getColumnIndex(COLUMN_SABAQI));
-                @SuppressLint("Range")  String manzil = cursor.getString(cursor.getColumnIndex(COLUMN_FINAL);
+                @SuppressLint("Range")  int id = cursor.getInt(cursor.getColumnIndex(COLUMN_ID));
+                @SuppressLint("Range")  String name = cursor.getString(cursor.getColumnIndex(COLUMN_NAME));
+                @SuppressLint("Range")  int age = Integer.parseInt(cursor.getString(cursor.getColumnIndex(COLUMN_AGE)) );
+                @SuppressLint("Range")   int class1 = Integer.parseInt(cursor.getString(cursor.getColumnIndex(COLUMN_CLASS)));
+                @SuppressLint("Range")  int sabaq = Integer.parseInt(cursor.getString(cursor.getColumnIndex(COLUMN_SABAQ)));
+                @SuppressLint("Range")  int sabaqi = Integer.parseInt(cursor.getString(cursor.getColumnIndex(COLUMN_SABAQI)));
+                @SuppressLint("Range")  int manzil = Integer.parseInt(cursor.getString(cursor.getColumnIndex(COLUMN_FINAL)));
                 @SuppressLint("Range") boolean yes = cursor.getInt(cursor.getColumnIndex(COLUMN_YESNO))>0;
 
-                students.add(new student(id, name, age, Class1, sabaq, sabaqi, manzil, yes));
+                students.add(new student(id, name, age, class1, sabaq, sabaqi, manzil, yes));
             } while (cursor.moveToNext());
         }
 
