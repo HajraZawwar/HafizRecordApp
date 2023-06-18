@@ -76,6 +76,7 @@ public class dbhandler extends SQLiteOpenHelper {
         values.put(COLUMN_CLASS, s.getClass1());
         values.put(COLUMN_SABAQ, s.getSabaq());
         values.put(COLUMN_SABAQI, s.getSabaqi());
+        //values.put(COLUMN_FINAL); s.getManzil();
 
 
         db.update(TABLE_NAME, values, COLUMN_ID+ " = ?", new String [] {String.valueOf(s.getID())});

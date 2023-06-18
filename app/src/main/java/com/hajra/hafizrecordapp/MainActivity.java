@@ -4,8 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,11 +24,15 @@ public class MainActivity extends AppCompatActivity {
 
     dbhandler db;
 
+    Button b1, b2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        b1 = findViewById(R.id.button1);
+        b2= findViewById(R.id.button);
 
         recyclerView = findViewById(R.id.recycleview);
         recyclerView.setHasFixedSize(true);
@@ -36,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 //                false);
         recyclerView.setLayoutManager(layoutManager);
 
-        db= new dbhandler(this);
+        db = new dbhandler(this);
         adapter = new myRecyclerViewAdapter(db.selectAllStudents());
 
 
@@ -45,9 +53,36 @@ public class MainActivity extends AppCompatActivity {
         //adapter.notifyDataSetChanged();
 
 
+       b1.setOnClickListener(new View.OnClickListener() {
+
+           @Override
+           public void onClick(View view) {
+
+             Intent I;
+
+                I = new Intent(MainActivity.this, adduser.class);
+
+                startActivity(I);
+
+              // Toast.makeText(getBaseContext(),"Hello World",Toast.LENGTH_LONG).show();
+
+            }
 
 
+        });
+
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent I = new Intent(MainActivity.this, MainActivity2.class);
+                //I.putExtra("ID", );
+                startActivity(I);
+            }
+
+
+        });
 
 
     }
 }
+

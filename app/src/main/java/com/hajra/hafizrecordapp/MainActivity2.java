@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity2 extends AppCompatActivity {
 
@@ -44,6 +46,17 @@ public class MainActivity2 extends AppCompatActivity {
 
 
 
+
+       c1 = findViewById(R.id.cb_completed);
+        c1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                   // db.updateStudent(s.getManzil());
+
+                }
+            }
+        });
 
 
     }
