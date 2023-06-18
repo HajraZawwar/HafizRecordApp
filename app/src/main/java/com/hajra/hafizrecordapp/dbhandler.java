@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,8 +28,11 @@ public class dbhandler extends SQLiteOpenHelper {
 
     private static final String COLUMN_YESNO = "yes";
 
+    private Context mycontext;
     public dbhandler(Context context) {
+
         super(context, DATABASE_NAME, null, 1);
+        mycontext = context;
     }
 
     @Override
@@ -37,9 +41,10 @@ public class dbhandler extends SQLiteOpenHelper {
                 + COLUMN_ID + " INTEGER PRIMARY KEY,"
                 + COLUMN_NAME + " TEXT,"
                 + COLUMN_AGE + " INTEGER,"
-                + COLUMN_CLASS + " INTEGER"
-                +COLUMN_SABAQ + "INTEGER"
-                +COLUMN_FINAL + "INTEGER"
+                + COLUMN_CLASS + " INTEGER,"
+                +COLUMN_SABAQ + "INTEGER,"
+                +COLUMN_SABAQI+ "INTEGER,"
+                +COLUMN_FINAL + "INTEGER,"
                 +COLUMN_YESNO + "BOOLEAN"
                 + ")";
         db.execSQL(sql);
@@ -53,6 +58,8 @@ public class dbhandler extends SQLiteOpenHelper {
     }
 
     public void insertStudent(student s) {
+        Toast.makeText(mycontext,"Hello World",Toast.LENGTH_LONG).show();
+
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -62,6 +69,7 @@ public class dbhandler extends SQLiteOpenHelper {
         values.put(COLUMN_CLASS, s.getClass1());
         values.put(COLUMN_SABAQ, s.getSabaq());
         values.put(COLUMN_SABAQI, s.getSabaqi());
+        values.put(COLUMN_FINAL, s.getManzil());
 
         db.insert(TABLE_NAME, null, values);
         db.close();
@@ -76,7 +84,7 @@ public class dbhandler extends SQLiteOpenHelper {
         values.put(COLUMN_CLASS, s.getClass1());
         values.put(COLUMN_SABAQ, s.getSabaq());
         values.put(COLUMN_SABAQI, s.getSabaqi());
-        //values.put(COLUMN_FINAL); s.getManzil();
+        values.put(COLUMN_FINAL, s.getManzil());
 
 
         db.update(TABLE_NAME, values, COLUMN_ID+ " = ?", new String [] {String.valueOf(s.getID())});
