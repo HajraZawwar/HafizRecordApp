@@ -39,15 +39,18 @@ public class adduser extends AppCompatActivity {
                 b1 = findViewById(R.id.btn_save);
 
                // Toast.makeText(getBaseContext(),"Hello World",Toast.LENGTH_LONG).show();
-
-
                 db = new dbhandler(getApplicationContext());
-                db.insertStudent(s);
+                student s= new student();
 
                 s.setID(Integer.parseInt(ed1.getText().toString()));
                 s.setName(ed2.getText().toString());
                 s.setage(Integer.parseInt(ed3.getText().toString()));
                 s.setClass1(Integer.parseInt(ed4.getText().toString()));
+
+
+                db.insertStudent(s);
+
+
 
                 //Toast.makeText(getBaseContext(),"Hello World1",Toast.LENGTH_LONG).show();
 

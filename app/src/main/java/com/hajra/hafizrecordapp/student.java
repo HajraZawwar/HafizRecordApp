@@ -24,6 +24,10 @@ public class student
         this.iscompleted = iscompleted;
     }
 
+    public student() {
+
+    }
+
     public String getName() {
         return name;
     }

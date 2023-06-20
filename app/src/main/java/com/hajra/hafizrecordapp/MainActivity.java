@@ -6,9 +6,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -31,21 +33,33 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //LinearLayout l= findViewById(R.id.mainactivityroot);
+
+        //View itemView = getLayoutInflater().inflate(R.layout.single_entry, l, false);
+
+
+       // View itemView = LayoutInflater.from(this).inflate(R.layout.single_entry, null, false);
+
         b1 = findViewById(R.id.button1);
-        b2= findViewById(R.id.button);
+        b2 = findViewById(R.id.button);
+
+
+        db = new dbhandler(this);
+
+        List<student> sts = db.selectAllStudents();
+
 
         recyclerView = findViewById(R.id.recycleview);
         recyclerView.setHasFixedSize(true);
 
         //LinearLayoutManager GridLayoutManager
         layoutManager = new LinearLayoutManager(MainActivity.this);
-//        layoutManager = new LinearLayoutManager(MainActivity.this,
-//                LinearLayoutManager.HORIZONTAL,
-//                false);
+        //  layoutManager = new LinearLayoutManager(MainActivity.this,
+        //  LinearLayoutManager.HORIZONTAL, false);
+
         recyclerView.setLayoutManager(layoutManager);
 
-        db = new dbhandler(this);
-        adapter = new myRecyclerViewAdapter(db.selectAllStudents());
+        adapter = new myRecyclerViewAdapter(sts);
 
 
         recyclerView.setAdapter(adapter);
@@ -53,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         //adapter.notifyDataSetChanged();
 
 
-       b1.setOnClickListener(new View.OnClickListener() {
+      b1.setOnClickListener(new View.OnClickListener() {
 
            @Override
            public void onClick(View view) {
@@ -84,5 +98,5 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-}
+    }
 

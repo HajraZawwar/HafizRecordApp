@@ -23,18 +23,17 @@ class myRecyclerViewAdapter extends RecyclerView.Adapter<myRecyclerViewAdapter.M
     @Override
     public myRecyclerViewAdapter.MyVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.single_entry, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.single_entry, parent, false);
         return new MyVH(itemView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull myRecyclerViewAdapter.MyVH holder, int position) {
         holder.data=studentList.get(position);
-        holder.textViewFriendID.setText(holder.data.getID());
+        holder.textViewFriendID.setText(Integer.toString(holder.data.getID()));
         holder.textViewFriendName.setText(holder.data.getName());
         holder.textViewdateFriend.setText(String.valueOf(holder.data.getage()));
-        holder.textViewCity.setText(holder.data.getClass1());
+        holder.textViewCity.setText(Integer.toString(holder.data.getClass1()));
     }
 
     @Override

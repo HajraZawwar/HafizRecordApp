@@ -41,15 +41,14 @@ public class dbhandler extends SQLiteOpenHelper {
                 + COLUMN_ID + " INTEGER PRIMARY KEY,"
                 + COLUMN_NAME + " TEXT,"
                 + COLUMN_AGE + " INTEGER,"
-                + COLUMN_CLASS + " INTEGER,"
-                +COLUMN_SABAQ + "INTEGER,"
-                +COLUMN_SABAQI+ "INTEGER,"
-                +COLUMN_FINAL + "INTEGER,"
-                +COLUMN_YESNO + "BOOLEAN"
+                + COLUMN_CLASS + "  INTEGER,"
+                +COLUMN_SABAQ + "  INTEGER,"
+                +COLUMN_SABAQI+ "  INTEGER,"
+                +COLUMN_FINAL + "  INTEGER,"
+                +COLUMN_YESNO + "  BOOLEAN"
                 + ")";
         db.execSQL(sql);
     }
-
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         String sql = "DROP TABLE IF EXISTS " + TABLE_NAME;
