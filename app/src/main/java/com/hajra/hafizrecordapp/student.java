@@ -1,7 +1,5 @@
 package com.hajra.hafizrecordapp;
 
-import android.widget.EditText;
-
 public class student
 {
     private String name;
@@ -22,14 +20,18 @@ public class student
         this.class1 = class1;
         this.sabaq = sabaq;
         this.sabaqi = sabaqi;
-        this.manzil= manzil;
+        setManzil(manzil);
         this.iscompleted = iscompleted;
     }
+
+
 
     public student() {
 
     }
 
+    public student(int id, String name, int age, int class1, String sabaq, int sabaqi, int manzil, boolean yes) {
+    }
 
 
     public String getName() {
@@ -68,13 +70,19 @@ public class student
         this.sabaqi= sabaqi;
     }
 
-    public int getSabaqi() {
+    public int getSabaqi(String s) {
         return sabaqi;
     }
 
 
-    public void setManzil(int manzil) {
-        this.manzil= manzil;
+    public void setManzil(int manzil)
+    {
+        if(manzil<1)
+        {
+            manzil=1;
+        }
+        else
+            this.manzil= manzil;
     }
 
     public int getManzil() {

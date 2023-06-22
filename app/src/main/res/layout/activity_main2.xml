@@ -13,72 +13,175 @@
         android:gravity="center_horizontal"
         />
 
-    <TextView
-        android:id="@+id/textView20"
-        android:layout_width="73dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:minHeight="48dp"
-        android:text="Sabaq:"
-        android:textSize="20sp"
-
-
-        />
 
     <EditText
-
-        android:id="@+id/editsabaq"
+        android:id="@+id/et_id"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginBottom="30dp"
-        android:hint="Sabaq"
+        android:layout_height="wrap_content"
+        android:hint="ID"
+        android:inputType="text"
+        android:maxLines="1"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name"
+        android:inputType="text"
+        android:maxLines="1"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/et_roll_no"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Age"
         android:inputType="number"
         android:maxLines="1"
         android:minHeight="48dp" />
 
+    <EditText
+        android:id="@+id/et_class"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Class"
+        android:inputType="number"
+        android:maxLines="1"
+        android:minHeight="48dp"
+        android:layout_marginBottom="30dp"
+        />
+
+
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="30dp"
+        android:layout_marginBottom="10dp"
+        android:text="Sabaq:"
+        android:textSize="20sp"
+
+        />
+
+    <EditText
+        android:id="@+id/sabaqtext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Para#"
+        android:inputType="number"
+        android:maxLines="1"
+        android:minHeight="48dp"
+        android:layout_marginBottom="30dp"
+        />
+
+    />
+
+    <!--
+    <EditText
+        android:id="@+id/SurahName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Surah Name"
+        android:inputType="number"
+        android:maxLines="1"
+        android:minHeight="30dp"
+        android:layout_marginBottom="30dp"
+        />
+
+    <EditText
+        android:id="@+id/firstindex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Start"
+        android:inputType="number"
+        android:maxLines="1"
+        android:minHeight="30dp"
+        android:layout_marginBottom="30dp"
+        />
+
+    <EditText
+        android:id="@+id/lastindex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="end"
+        android:inputType="number"
+        android:maxLines="1"
+        android:minHeight="30dp"
+        android:layout_marginBottom="30dp"
+        /> -->
     <TextView
         android:id="@+id/textView21"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:minHeight="48dp"
+        android:minHeight="30dp"
         android:layout_marginBottom="10dp"
         android:text="Sabaqi:"
         android:textSize="20sp"
 
         />
+
+
+
+
+    <EditText
+        android:id="@+id/sabaqitext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="sabaqi"
+        android:inputType="number"
+        android:maxLines="1"
+        android:minHeight="30dp"
+        android:layout_marginBottom="30dp"
+        />
     <TextView
         android:id="@+id/textView22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:minHeight="48dp"
+        android:minHeight="30dp"
+
         android:text="Manzil:"
         android:textSize="20sp"
 
+        />
+    <EditText
+        android:id="@+id/manziltext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="manzil"
+        android:inputType="number"
+        android:maxLines="1"
+        android:minHeight="30dp"
+        android:layout_marginBottom="30dp"
         />
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
 
         <CheckBox
             android:id="@+id/cb_completed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Completed"
-            />
+            android:text="Completed" />
 
 
     </LinearLayout>
 
 
+
+
+
     <Button
         android:id="@+id/btn_save"
-        android:layout_width="368dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Save" />
+
+
 
 
 </LinearLayout>

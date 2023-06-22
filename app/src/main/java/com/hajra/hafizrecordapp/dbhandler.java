@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -68,7 +70,7 @@ public class dbhandler extends SQLiteOpenHelper {
         values.put(COLUMN_AGE, s.getage());
         values.put(COLUMN_CLASS, s.getClass1());
         values.put(COLUMN_SABAQ, s.getSabaq());
-        values.put(COLUMN_SABAQI, s.getSabaqi());
+        values.put(COLUMN_SABAQI, s.getSabaqi(Integer.toString(s.getSabaq() - 1)));
         values.put(COLUMN_FINAL, s.getManzil());
 
         db.insert(TABLE_NAME, null, values);
@@ -83,7 +85,7 @@ public class dbhandler extends SQLiteOpenHelper {
         values.put(COLUMN_AGE, s.getage());
         values.put(COLUMN_CLASS, s.getClass1());
         values.put(COLUMN_SABAQ, s.getSabaq());
-        values.put(COLUMN_SABAQI, s.getSabaqi());
+        values.put(COLUMN_SABAQI, s.getSabaqi(Integer.toString(s.getSabaq() - 1)));
         values.put(COLUMN_FINAL, s.getManzil());
 
 

@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
        // View itemView = LayoutInflater.from(this).inflate(R.layout.single_entry, null, false);
 
         b1 = findViewById(R.id.button1);
-        b2 = findViewById(R.id.button);
+        //b2 = findViewById(R.id.button);
         //search = findViewById(R.id.editTextNumber) ;
 
 
@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-       b2.setOnClickListener(new View.OnClickListener() {
+      /* b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
 
-        });
+        });*/
 
 
 
