@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     dbhandler db;
 
+    EditText search;
     Button b1, b2;
 
     @Override
@@ -42,9 +44,12 @@ public class MainActivity extends AppCompatActivity {
 
         b1 = findViewById(R.id.button1);
         b2 = findViewById(R.id.button);
+        //search = findViewById(R.id.editTextNumber) ;
 
 
         db = new dbhandler(this);
+
+        student s = new student();
 
         List<student> sts = db.selectAllStudents();
 
@@ -85,16 +90,21 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        b2.setOnClickListener(new View.OnClickListener() {
+       b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
                 Intent I = new Intent(MainActivity.this, MainActivity2.class);
-                //I.putExtra("ID", );
+                //I.putExtra("ID",  );
                 startActivity(I);
             }
 
 
         });
+
+
+
 
 
     }

@@ -14,44 +14,6 @@
         />
 
     <TextView
-        android:id="@+id/et_id1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="ID:"
-        android:inputType="text"
-        android:maxLines="1"
-        android:minHeight="48dp" />
-
-    <TextView
-        android:id="@+id/et_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Name:"
-        android:inputType="text"
-        android:maxLines="1"
-        android:minHeight="48dp" />
-
-    <TextView
-        android:id="@+id/et_roll_no"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Age:"
-        android:inputType="number"
-        android:maxLines="1"
-        android:minHeight="48dp" />
-
-    <TextView
-        android:id="@+id/et_class"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Class:"
-        android:inputType="number"
-        android:maxLines="1"
-        android:minHeight="48dp"
-        android:layout_marginBottom="30dp"
-        />
-
-    <TextView
         android:id="@+id/textView20"
         android:layout_width="73dp"
         android:layout_height="wrap_content"

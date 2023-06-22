@@ -1,5 +1,7 @@
 package com.hajra.hafizrecordapp;
 
+import android.widget.EditText;
+
 public class student
 {
     private String name;
@@ -27,6 +29,8 @@ public class student
     public student() {
 
     }
+
+
 
     public String getName() {
         return name;

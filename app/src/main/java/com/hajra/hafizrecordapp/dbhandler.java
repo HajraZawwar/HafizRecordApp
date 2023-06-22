@@ -35,6 +35,7 @@ public class dbhandler extends SQLiteOpenHelper {
         mycontext = context;
     }
 
+
     @Override
     public void onCreate(SQLiteDatabase db) {
         String sql = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "("
@@ -90,9 +91,9 @@ public class dbhandler extends SQLiteOpenHelper {
         db.close();
     }
 
-    public void deleteStudent(student s) {
+    public void deleteStudent(int id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(TABLE_NAME, COLUMN_ID + " = ?", new String [] {String.valueOf(s.getID())});
+        db.delete(TABLE_NAME, COLUMN_ID + " = ?", new String [] {String.valueOf(id)});
         db.close();
     }
 
@@ -146,15 +147,14 @@ public class dbhandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(sql, null);
 
-        /*
-        * if (cursorCourses.moveToFirst()) {
+        /* if (cursorCourses.moveToFirst()) {
             do {
                 studentArrayList.add(new StudentModel(cursorCourses.getString(1),
                       cursorCourses.getInt(2),
                         cursorCourses.getInt(3) == 1 ? true : false));
             } while (cursorCourses.moveToNext());
         }
-        * */
+        */
 
 
             cursor.moveToFirst();

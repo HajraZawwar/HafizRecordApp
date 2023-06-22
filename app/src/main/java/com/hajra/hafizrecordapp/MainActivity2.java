@@ -1,5 +1,6 @@
 package com.hajra.hafizrecordapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -15,7 +16,7 @@ public class MainActivity2 extends AppCompatActivity {
     dbhandler db;
     student s;
 
-    TextView ed1, ed2, ed3,ed4, ed5, ed6;
+    TextView ed1, ed5, ed6;
     CheckBox c1;
     Button b1;
 
@@ -26,29 +27,33 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
 
         db= new dbhandler(this);
-        int student_id= getIntent().getExtras().getInt("student_id");
+        int student_id= getIntent().getExtras().getInt("StudentID");
         s= db.selectStudent(student_id);
+        //Toast.makeText(getBaseContext(), Integer.toString(student_id) ,Toast.LENGTH_LONG).show();
 
-        ed1 = findViewById(R.id.et_id1);
-        ed2 = findViewById(R.id.et_name);
-        ed3= findViewById(R.id.et_roll_no);
-        ed4= findViewById(R.id.et_class);
+
+
+        ed1 = findViewById(R.id.editsabaq);
         ed5= findViewById(R.id.textView21);
-        ed5= findViewById(R.id.textView22);
+        ed6= findViewById(R.id.textView22);
 
 
-        ed1.setText(s.getID());
-        ed2.setText(s.getName());
-        ed3.setText(s.getage());
-        ed4.setText(s.getClass1());
-        ed5.setText(s.getSabaqi());
-        ed6.setText(s.getManzil());
+        ed1.setText(Integer.toString(s.getSabaq()));
+        //ed5.setText(s.getSabaqi());
+        //ed6.setText(s.getManzil());
 
 
 
 
-       c1 = findViewById(R.id.cb_completed);
-        c1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+
+
+
+
+
+      c1 = findViewById(R.id.cb_completed);
+        c1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
@@ -57,6 +62,8 @@ public class MainActivity2 extends AppCompatActivity {
                 }
             }
         });
+
+
 
 
     }

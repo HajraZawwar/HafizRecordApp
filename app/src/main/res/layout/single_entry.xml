@@ -8,7 +8,7 @@
 
     <TextView
         android:id="@+id/textViewFriendID"
-        android:layout_width="wrap_content"
+        android:layout_width="20dp"
         android:layout_height="wrap_content"
         android:text="ID"
         android:textSize="20dp"
@@ -19,7 +19,7 @@
 
     <TextView
         android:id="@+id/textViewFriendName"
-        android:layout_width="wrap_content"
+        android:layout_width="40dp"
         android:layout_height="wrap_content"
         android:text="Name"
         android:textSize="20dp"
@@ -30,7 +30,7 @@
 
     <TextView
         android:id="@+id/textViewDate"
-        android:layout_width="wrap_content"
+        android:layout_width="20dp"
         android:layout_height="wrap_content"
         android:text="Age"
         android:textSize="20dp"
@@ -41,7 +41,7 @@
 
     <TextView
         android:id="@+id/textViewCity"
-        android:layout_width="wrap_content"
+        android:layout_width="40dp"
         android:layout_height="wrap_content"
         android:text="Class"
         android:textSize="20sp"
@@ -50,6 +50,12 @@
         app:layout_constraintHorizontal_chainStyle="packed"
         />
 
+    <Button
+        android:id="@+id/btn_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Progress"
+        />
     <Button
         android:id="@+id/btn_edit"
         android:layout_width="wrap_content"
